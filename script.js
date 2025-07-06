@@ -1,3 +1,4 @@
+//tried many times by myself nd at end this is the script by chatgpt of my tried hard js file that wasn't wokring 
 const roun = document.getElementById('rounds');
 const option = document.getElementById('options');
 const infodiv = document.getElementById('result');
@@ -109,7 +110,7 @@ function playGame(rounds, current) {
     });
 }
 
-roun.addEventListener('keypress', (e) => {
+roun.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         // e.preventDefault();
         const roundsValue = Number(roun.value);
