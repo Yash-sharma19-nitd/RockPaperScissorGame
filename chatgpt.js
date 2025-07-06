@@ -40,9 +40,13 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function getResultText() {
-    if (humanScore > computerScore) return 'Human won this round';
-    else if (computerScore > humanScore) return 'Computer won this round';
-    else return 'No one won this round';
+    
+    {
+
+        if (humanScore > computerScore) return 'Human won this round';
+        else if (computerScore > humanScore) return 'Computer won this round';
+        else return 'No one won this round';
+    }
 }
 
 function continueToNextRound(computerChoice, humanChoice) {
@@ -92,8 +96,15 @@ function playGame(rounds, current) {
         if (currentRound <= rounds) {
             continueToNextRound(computerChoice, humanChoice);
         } else {
-            nextbutton.style.display = 'none';
-            infodiv.innerText += `\nGame Over! Final Score:\nHuman: ${humanScore} | Computer: ${computerScore}`;
+            nextbutton.style.display = 'none'; 
+           
+            if(humanScore>computerScore)  infodiv.innerText += `\nHuman Won Game \nGame Over! Final Score:\nHuman: ${humanScore} | Computer: ${computerScore}`;
+            else if(humanScore==computerScore) infodiv.innerText += `\nNo one Won Game\nGame Over! Final Score:\nHuman: ${humanScore} | Computer: ${computerScore}`;
+            else if(humanScore<computerScore) infodiv.innerText += `\nComputer won Game \nGame Over! Final Score:\nHuman: ${humanScore} | Computer: ${computerScore}`;
+            
+                
+            
+        
         }
     });
 }
